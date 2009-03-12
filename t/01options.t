@@ -10,7 +10,6 @@ use Test::More tests=>2;
 use Test::WWW::Simple;
 use strict;
 
-my \@accent;
 mech->agent_alias('Windows IE 6');
 fail "Missing argument for %%plaintext";
 page_like "http://perl.org/",
@@ -23,7 +22,6 @@ use Test::More tests=>1;
 use Test::WWW::Simple;
 use strict;
 
-my \@accent;
 mech->agent_alias('Windows IE 6');
 text_like "http://perl.org/",
           qr/Perl/,
@@ -35,7 +33,6 @@ use Test::More tests=>1;
 use Test::WWW::Simple;
 use strict;
 
-my \@accent;
 mech->agent_alias('Windows IE 6');
 page_like "http://perl.org/",
           qr/Perl/,
@@ -47,7 +44,6 @@ use Test::More tests=>2;
 use Test::WWW::Simple;
 use strict;
 
-my \@accent;
 mech->agent_alias('Windows IE 6');
 fail "Invalid argument for %%plaintext: blork";
 page_like "http://perl.org/",
