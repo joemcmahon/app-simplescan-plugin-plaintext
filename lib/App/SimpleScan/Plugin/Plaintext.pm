@@ -1,6 +1,6 @@
 package App::SimpleScan::Plugin::Plaintext;
 
-our $VERSION = '0.03';
+our $VERSION = '1.00';
 
 use warnings;
 use strict;
@@ -54,12 +54,12 @@ __END__
 
 =head1 NAME
 
-App::SimpleScan::Plugin::Plaintext - [One line description of module's purpose here]
+App::SimpleScan::Plugin::Plaintext - check a page's text without markup
 
 
 =head1 VERSION
 
-This document describes App::SimpleScan::Plugin::Plaintext version 0.0.1
+This document describes App::SimpleScan::Plugin::Plaintext version 1.00
 
 
 =head1 SYNOPSIS
@@ -117,7 +117,8 @@ plaintext processing on, or '0' or 'off' to turn it off.
 
 =head1 CONFIGURATION AND ENVIRONMENT
 
-App::SimpleScan::Plugin::Plaintext requires no configuration files or environment variables.
+App::SimpleScan::Plugin::Plaintext requires no configuration 
+files or environment variables.
 
 
 =head1 DEPENDENCIES
@@ -135,8 +136,8 @@ None reported.
 No bugs have been reported.
 
 Please report any bugs or feature requests to
-C<bug-app-simplescan-plugin-plaintext@rt.cpan.org>, or through the web interface at
-L<http://rt.cpan.org>.
+C<bug-app-simplescan-plugin-plaintext@rt.cpan.org>, 
+or through the web interface at L<http://rt.cpan.org>.
 
 
 =head1 AUTHOR
@@ -146,7 +147,8 @@ Joe McMahon  C<< <mcmahon@cpan.org> >>
 
 =head1 LICENCE AND COPYRIGHT
 
-Copyright (c) 2006, Joe McMahon C<< <mcmahon@cpan.org> >> and Yahoo!. All rights reserved.
+Copyright (c) 2006, Joe McMahon 
+C<< <mcmahon@cpan.org> >> and Yahoo!. All rights reserved.
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself. See L<perlartistic>.
