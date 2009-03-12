@@ -1,5 +1,8 @@
 Revision history for App-SimpleScan-Plugin-Plaintext
 
+0.03  Fri Mar 17 11:57:24 PST 2006
+	- switch code filtering to new filter() paradigm
+
 0.02  Wed Mar  8 14:59:37 PST 2006
 	- add checking and test for missing arguments
 

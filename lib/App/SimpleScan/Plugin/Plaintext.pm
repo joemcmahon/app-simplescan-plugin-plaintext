@@ -1,6 +1,6 @@
 package App::SimpleScan::Plugin::Plaintext;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use warnings;
 use strict;
@@ -13,11 +13,6 @@ __PACKAGE__->mk_accessors( qw(plaintext) );
 sub import {
   no strict 'refs';
   *{caller() . '::plaintext'}     = \&plaintext;
-  {
-    no warnings 'redefine';
-    *old_stack_test = eval("\\&".caller()."::stack_test");
-    *{caller() . '::stack_test'}   = \&stack_test;
-  }
 }
 
 sub pragmas {
@@ -41,14 +36,16 @@ sub plaintext_pragma {
   }
 }
 
-sub stack_test {
+sub filters {
+  return \&filter;
+}
+
+sub filter {
   my ($self, @code) = @_;
   if ($self->plaintext) {
     @code = map { s/page_(.*?)like/text_${1}like/; $_ } @code;
   }
-
-  # Now do what we'd normally do.
-  old_stack_test($self, @code);
+  return @code;
 }
 
 
@@ -95,13 +92,16 @@ Exports the C<%%plaintext> pragma handler to C<App::SimpleScan>.
 Actually handles the pragma statement. Calls the exported C<plaintext>
 method to record the current state (on or off).
 
-=head2 stack_test
+=head2 filters
 
-Overrides existing C<stack_test> calls; if the C<plaintext> method
-returns true, it alters the text that's about to be stacked.
+Standard C<App::SimpleScan> callback; returns the code filters.
 
-In either case, it calls the old C<stack_test> routine after it 
-does its process so that the tests get stacked as they normally would.
+=head2 filter
+
+If the C<plaintext> method returns true, we alter the tests to
+use text_like and text_unlike instead of page_like and 
+page_unlike. In eitehr case, we return the code to the
+caller (standard interface).
 
 =head1 DIAGNOSTICS
 
