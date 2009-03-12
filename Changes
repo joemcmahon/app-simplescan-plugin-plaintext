@@ -1,0 +1,8 @@
+Revision history for App-SimpleScan-Plugin-Plaintext
+
+0.02  Wed Mar  8 14:59:37 PST 2006
+	- add checking and test for missing arguments
+
+0.01  Wed Mar  8 12:01:51 2006
+       Initial release.
+
